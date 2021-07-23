@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>메인화면 검색창&버튼 팝업</title>
+
+</head>
+
+<style>
+    label {
+        display: block;
+        font-size: 20px;
+        background-color: #e43680;
+        padding: 10px;
+        margin-left: 1000px;
+    }
+
+    .card-img-top {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card-title {
+        margin-left: 50px;
+    }
+
+</style>
+
+<script>
+    $(document).ready(function () {
+        showArticles();
+    });
+
+    function openClose() {
+        if ($("#post-box").css("display") == "block") {
+            $("#post-box").hide();
+            $("#btn-post-box").text("포스팅 박스 열기");
+        } else {
+            $("#post-box").show();
+            $("#btn-post-box").text("포스팅 박스 닫기");
+        }
+    }
+
+    function postArticle() {
+        $.ajax({
+            type: "POST",
+            url: "/memo",
+            data: {sample_give: '샘플데이터'},
+            success: function (response) { // 성공하면
+                alert(response["msg"]);
+                window.location.reload()
+            }
+        })
+    }
+
+    function showArticles() {
+        $.ajax({
+            type: "GET",
+            url: "/info",
+            data: {},
+            success: function (response) {
+                let musicals = response['all_musicals']
+                for (let i = 0; i < musicals.length; i++) {
+                    let title = musicals[i]['title']
+                    let image = musicals[i]['image']
+                    let url = musicals[i]['url']
+                    let theater = musicals[i]['theater']
+                    let acter = musicals[i]['acter']
+
+                    let temp_html = `<img class="card-img-top"
+                                         src="${image}"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <a target="_blank" href="${url}" class="card-title">${title}</a>
+                                    </div>`
+
+                    $('#info').append(temp_html)
+                }
+
+            }
+        })
+    }
+
+
+    function showPopup() {
+        window.open("searching_pop.html", "상세검색", "width=600, height=600, left=100, top=50");
+    }
+
+
+</script>
+
+<body>
+<label class="main_search">
+    <input class='keyword' type='text' name='search' maxlength=255 value="" autocomplete="off"
+           placeholder="뮤지컬 제목을 입력하세요" style="width: 300px">
+    <button class="img_btn" type="submit" name="click" value="">검색</button>
+    <input class="button" type="button" value="상세검색" onclick="showPopup();">
+</label>
+
+<div class="card">
+    <img class="card-img-top"
+         src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2624114F54B3BE251F"
+         alt="Card image cap">
+    <div class="card-body">
+        <a target="_blank" href="" class="card-title">뮤지컬 제목</a>
+    </div>
+</div>
+
+</body>
+</html>
