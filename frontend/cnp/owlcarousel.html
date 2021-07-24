@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <title>owl.carousel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<style>
+    .header {
+        background-color: rgb(212, 187, 228);
+        width: 78%;
+        height: 60px;
+        top: 50px;
+        left: 11%;
+        position: absolute;
+        border-radius: 10px;
+    }
+    .notice {
+        font-size: 40px;
+        color: #ffffff;
+        font-weight: 800;
+        position: absolute;
+        top: -30px;
+        left: 20px;
+    }
+    .desc {
+        color: #ffffff;
+        font-weight: bold;
+        position: absolute;
+        left: 287px;
+        top: 15px;
+    }
+
+    .owl-carousel .owl-nav button.owl-next,
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel button {
+        font-size: 50px;
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    .owl-carousel {
+        width: 78%;
+        position: absolute;
+        top: 18%;
+        left: 11%
+    }
+
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .owl-prev {
+        left: -2rem;
+    }
+
+    .owl-next {
+        right: -2rem;
+    }
+
+    .item {
+        transition: all ease 0.2s 0s;
+    }
+
+    .item:hover .overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    .text {
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .title {
+
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <p class="notice">&#10004; Ticket Open</p>
+        <p class="desc">인터파크/예스24 참고</p>
+    </div>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <img
+                src="http://tkfile.yes24.com/upload2/BoardNotice/202107/20210722/20210722-c0ac6e2a-41d2-40fe-8902-9896a6846020.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://tkfile.yes24.com/upload2/PerfBlog/202107/20210722/20210722-39743.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://tkfile.yes24.com/upload2/PerfBlog/202107/20210712/20210712-39608.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://tkfile.yes24.com/upload2/PerfBlog/202107/20210719/20210719-39029.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://tkfile.yes24.com/upload2/PerfBlog/202107/20210721/20210721-39740.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img
+                src="http://tkfile.yes24.com/upload2/BoardNotice/202107/20210716/20210716-064176bf-09e3-4094-9cc2-edf59d01fad4.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <img
+                src="http://tkfile.yes24.com/upload2/BoardNotice/202107/20210716/20210716-e67adc87-8b10-4ac2-ae67-999478723714.jpg">
+            <div class="overlay">
+                <a class="text">
+                    <span class="title">홀연했던<br>사나이</span>
+                    <span class="date">2021.07.29.</span>
+                    <span class="time">16:00</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 5,
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [1000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
+    </script>
+</body>
+
+</html>
