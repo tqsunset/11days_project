@@ -20,14 +20,8 @@ THEATRE_LIST = ('예술의전당 오페라극장',
                 '우리금융아트홀',
                 '서울 올림픽 공원 우리금융아트홀')
 
-# 현재 공연 중 리스트 1페이지 & 2페이지 주소
-open_url1 = 'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=2'
-open_url2 = 'http://www.playdb.co.kr/playdb/playdblist.asp?Page=2&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType='
-
-# 개막예정 리스트 1페이지 & 2페이지 주소
-coming_url1 = 'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'
-coming_url2 = 'http://www.playdb.co.kr/playdb/playdblist.asp?Page=2&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'
-
+def url(i,j):
+    return 'http://www.playdb.co.kr/playdb/playdblist.asp?Page={0}&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType={1}'.format(i,j)
 
 def parse_musicals(url):
     headers = {
@@ -41,8 +35,12 @@ def parse_musicals(url):
     musical_extract = musical_table.select('td > table > tr > td > table > tr > td > table > tr > td > table')
 
     for musical in musical_extract:
-        play_name = musical.select_one('tr > td > b > font > a')
-        if play_name is not None:
+        # print(musical,'\n\n')
+
+        play = musical.select_one('tr > td > b > font > a')
+        if play is not None:
+            play_no = [play['onclick'][10:16]]
+
             info = musical.text.strip()
             info_parsed = info.split(':')
 
@@ -57,15 +55,19 @@ def parse_musicals(url):
                 info_parsed[5] = info_parsed[5].strip()
 
             if info_parsed[3] in THEATRE_LIST:  # if 1 in (1, 2, 3, 4): "(1, 2, 3, 4)의 원소 중 1이 있으면", 대극장에 속하지 않는 공연 필터링
-                result.append(info_parsed)
+                play_no.extend(info_parsed)
+                print(play_no)
+                result.append(play_no)
 
     return result
 
+full_list = [] # 공연중, 공연예정 모
 
-list1 = parse_musicals(open_url1)
-list2 = parse_musicals(open_url2)
-list1.extend(list2)         # 공연중 리스트 1페이지와 2페이지를 합침
-full_list = list1
+for j in [2,3]:
+    for i in [1,2]:
+        address = url(i, j)
+        # print(address)
+        full_list.extend(parse_musicals(address))
 
 if __name__ == "__main__":  # 다른 모듈에서 이 모듈을 import할 때에는 본문을 실행하지 않는다
     pprint(full_list)
