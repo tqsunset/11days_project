@@ -20,23 +20,20 @@ THEATRE_LIST = ('예술의전당 오페라극장',
                 '우리금융아트홀',
                 '서울 올림픽 공원 우리금융아트홀')
 
-ori_url = 'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=2'
-
 def url(i,j):
     return 'http://www.playdb.co.kr/playdb/playdblist.asp?Page={0}&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType={1}'.format(i,j)
 
 def parse_musicals(url):
-    #print(url)  #
+    #print(url)
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data = requests.get(url, headers=headers)
     page = BeautifulSoup(data.text, 'html.parser')
     result = []
-    print(page) #
+    # print(page)
 
     trs = page.select('#contents > div.container1 > table > tr')
-    print(len(trs))
     musical_table = trs[10]
     musical_extract = musical_table.select('td > table > tr > td > table > tr > td > table > tr > td > table')
 
@@ -62,12 +59,12 @@ def parse_musicals(url):
 
             if info_parsed[3] in THEATRE_LIST:  # if 1 in (1, 2, 3, 4): "(1, 2, 3, 4)의 원소 중 1이 있으면", 대극장에 속하지 않는 공연 필터링
                 play_no.extend(info_parsed)
-                print(play_no)
+                # print(play_no)
                 result.append(play_no)
 
     return result
 
-full_list = [] # 공연중, 공연예정 모
+full_list = []
 
 for j in [2,3]:
     for i in [1,2]:
@@ -75,7 +72,6 @@ for j in [2,3]:
         # print(address)
         full_list.extend(parse_musicals(address))
 
-print(parse_musicals(ori_url))
 if __name__ == "__main__":  # 다른 모듈에서 이 모듈을 import할 때에는 본문을 실행하지 않는다
     pprint(full_list)
 
