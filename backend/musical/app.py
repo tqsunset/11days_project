@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from detail_c import cast_crwl
+from detail_c import cast_crwl, desc_crwl
 from pprint import pprint
 
 THEATRE_LIST = ('예술의전당 오페라극장',
@@ -56,9 +56,10 @@ def musical(url):
                     # print(info,'\n\n')
 
                     if info[4] in THEATRE_LIST:
-                        info = info + cast_crwl(info[0])
+                        num = info[0]
+                        info = info + cast_crwl(num) + [desc_crwl(num)]
                         # pprint(cast_crwl(info[0]))
-                        pprint(info)
+                        # pprint(info)
                         result.append(info)
         except IndexError:
             pass
@@ -72,5 +73,5 @@ for i in range(2, 4):
     url = 'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType={}'.format(i)
     musical_data.extend(musical(url))
 
-# if __name__ == "__main__":
-#     pprint(musical_data)
+if __name__ == "__main__":
+    pprint(musical_data[0])

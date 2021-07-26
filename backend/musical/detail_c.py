@@ -2,12 +2,13 @@ from bs4 import BeautifulSoup
 import requests
 from pprint import pprint
 
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 
+# 상세페이지 캐스트 정보 크롤링
 def cast_crwl(num):
     url = 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno={}'.format(num)
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     data = requests.get(url, headers=headers)
     page = BeautifulSoup(data.text, 'html.parser')
     detail_contents = page.select(
@@ -51,7 +52,15 @@ def partition(input):
 
     return list(map(dict, result))
 
+# 작품설명 크롤링
+def desc_crwl(num):
+    url = 'https://www.playdb.co.kr/playdb/playdbDetail_Content.asp?TabKind=2&PlayNo='
+    data = requests.get(url + num , headers=headers)
+    page = BeautifulSoup(data.text, 'html.parser')
+    text = page.find("td", "news").text
 
-if __name__ == "__main__":
-    test_numb = '165030'
-    pprint(cast_crwl(test_numb))
+    return text
+
+# if __name__ == "__main__":
+#     test_numb = '165030'
+#     pprint(cast_crwl(test_numb))
