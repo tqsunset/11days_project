@@ -29,11 +29,9 @@ def musical(url):
 
     for i in [1, 2]:
         address = url + '&Page={}'.format(i)
-        # print(address)
 
         data = requests.get(address, headers=headers)
         page = BeautifulSoup(data.text, 'html.parser')
-        # print(page)
 
         trs = page.select('#contents > div.container1 > table > tr')
         musical_table = trs[10]
@@ -46,21 +44,17 @@ def musical(url):
                     play_no = [play['onclick'][10:16]]
                     text_strip = musical.text.strip()
                     info_parse = text_strip.split(':')
-                    # print(info_parse)
-
-                    info_parse[2] = info_parse[2].strip('장소 ')
-
-                    date = parse_date(info_parse[2])  # 공연기간을 표시하는 string을 datetime 객체들로 변환
 
                     info_parse[0] = info_parse[0].rstrip('세부장르 \n\t\r')
                     info_parse[1] = info_parse[1].strip('일시 ')
+                    info_parse[2] = info_parse[2].strip('장소 ')
                     info_parse[3] = info_parse[3].strip('출연 ')
                     info_parse[4] = info_parse[4].strip('Staff ')
 
-                    info = play_no + info_parse[0:2] + date + info_parse[3:]
-                    # print(info,'\n\n')
+                    if info_parse[3] in THEATRE_LIST:
+                        date = parse_date(info_parse[2])  # 공연기간을 표시하는 string을 datetime 객체들로 변환
+                        info = play_no + info_parse[0:2] + date + info_parse[3:]
 
-                    if info[5] in THEATRE_LIST:
                         num = info[0]
                         info = info + detail_crwl(num) + [desc_crwl(num)]
                         result.append(info)
