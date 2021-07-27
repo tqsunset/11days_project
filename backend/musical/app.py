@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-from detail_c import cast_crwl, desc_crwl
+from detail_c import detail_crwl, desc_crwl
+from parse_date import parse_date
 from pprint import pprint
 
 THEATRE_LIST = ('예술의전당 오페라극장',
@@ -22,10 +23,11 @@ THEATRE_LIST = ('예술의전당 오페라극장',
 
 
 def musical(url):
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
     result = []
 
-    for i in [1,2]:
+    for i in [1, 2]:
         address = url + '&Page={}'.format(i)
         # print(address)
 
@@ -40,26 +42,27 @@ def musical(url):
         try:
             for musical in extract:
                 play = musical.select_one('tr > td > b > font > a')
-                if play is not None:  #
+                if play is not None:
                     play_no = [play['onclick'][10:16]]
                     text_strip = musical.text.strip()
                     info_parse = text_strip.split(':')
-                    #print(len(info_parse))
+                    # print(info_parse)
+
+                    info_parse[2] = info_parse[2].strip('장소 ')
+
+                    date = parse_date(info_parse[2])  # 공연기간을 표시하는 string을 datetime 객체들로 변환
 
                     info_parse[0] = info_parse[0].rstrip('세부장르 \n\t\r')
                     info_parse[1] = info_parse[1].strip('일시 ')
-                    info_parse[2] = info_parse[2].strip('장소 ')
                     info_parse[3] = info_parse[3].strip('출연 ')
                     info_parse[4] = info_parse[4].strip('Staff ')
 
-                    info = play_no + info_parse
+                    info = play_no + info_parse[0:2] + date + info_parse[3:]
                     # print(info,'\n\n')
 
-                    if info[4] in THEATRE_LIST:
+                    if info[5] in THEATRE_LIST:
                         num = info[0]
-                        info = info + cast_crwl(num) + [desc_crwl(num)]
-                        # pprint(cast_crwl(info[0]))
-                        # pprint(info)
+                        info = info + detail_crwl(num) + [desc_crwl(num)]
                         result.append(info)
         except IndexError:
             pass
@@ -70,8 +73,9 @@ def musical(url):
 musical_data = []
 
 for i in range(2, 4):
-    url = 'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType={}'.format(i)
+    url = 'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType={}'.format(
+        i)
     musical_data.extend(musical(url))
 
 if __name__ == "__main__":
-    pprint(musical_data[0])
+    pprint(musical_data)
