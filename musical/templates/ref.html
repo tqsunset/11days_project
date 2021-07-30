@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        thead {
+            background-color: bisque
+        }
+
+        td {
+            border: 1px solid black;
+            min-width: 200px;
+        }
+
+        tbody td {
+            overflow-y: scroll;
+            max-width: 500px;
+        }
+
+        .desc {
+            width: 500px;
+        }
+
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            showMusicals();
+        });
+
+        function showMusicals() {
+            $.ajax({
+                type: "GET",
+                url: "/musicals",
+                data: {},
+                success: function (response) {
+                    musicals = response['musicals']
+                    console.log(musicals)
+
+                    for (let i = 0; i < musicals.length; i++) {
+                        musical = musicals[i]
+
+                        title = musical['title']
+                        genre = musical['genre']
+                        startDate = musical['start_date']
+                        endDate = musical['end_date']
+                        loc = musical['location']
+                        cast = musical['cast']
+                        staff = musical['staff']
+                        castDetail = JSON.stringify(musical['cast_detail'])  // 현 html페이지에서 내용을 볼 수 있게 dict을 string으로 변환
+                        link = musical['link']
+                        desc = musical['desc']
+
+                        if (staff == undefined){
+                            staff = ""
+                        }
+
+                        temp_html = `<tr>
+                                        <td>${title}</td>
+                                        <td>${genre}</td>
+                                        <td>${startDate}</td>
+                                        <td>${endDate}</td>
+                                        <td>${loc}</td>
+                                        <td>${cast}</td>
+                                        <td>${staff}</td>
+                                        <td>${castDetail}</td>
+                                        <td>${link}</td>
+                                        <td><p class="desc">${desc}</p></td>
+                                    </tr>`
+
+                        $('#items').append(temp_html)
+
+                    }
+                    alert("get works!")
+                }
+            })
+        }
+    </script>
+</head>
+<table>
+    <thead>
+    <tr>
+        <td>title</td>
+        <td>genre</td>
+        <td>start date</td>
+        <td>end date</td>
+        <td>location</td>
+        <td>cast</td>
+        <td>staff</td>
+        <td>cast-detail</td>
+        <td>link</td>
+        <td>desc</td>
+    </tr>
+    </thead>
+    <tbody id="items">
+
+    </tbody>
+</table>
+<body>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-import app
+import main
 
 client = MongoClient('localhost', 27017)
 db = client.dbsparta
@@ -7,7 +7,7 @@ db = client.dbsparta
 with_staff = ['num', 'title','genre', 'start_date', 'end_date', 'location', 'cast', 'staff', 'cast_detail' , 'link', 'desc'] #DB입력을 위한 키 생성 (스태프 정보 있을 시)
 without_staff = ['num', 'title','genre', 'start_date', 'end_date', 'location', 'cast', 'cast_detail' , 'link', 'desc'] #DB입력을 위한 키 생성 (스태프 정보 없을 시)
 
-lists = app.musical_data  #app.py에서 공연중+공연예정 리스트가 저장된 musical_data 가져옴
+lists = main.musical_data  #app.py에서 공연중+공연예정 리스트가 저장된 musical_data 가져옴
 
 for list in lists:
     keys = []
