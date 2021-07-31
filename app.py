@@ -1,3 +1,5 @@
+import datetime
+
 from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
@@ -11,8 +13,21 @@ def home():
 
 @app.route('/musicals', methods=['GET'])
 def read_musicals():
-    musicals = list(db.musicals.find({}, {'_id':False}))
-    # print(musicals)
+    type_receive = request.args.get('type')
+    print(type_receive)
+    now = datetime.datetime.now()
+
+    if type_receive == 'coming':
+        # musicals = 'coming'
+        musicals = list(db.musicals.find({'start_date':{"$gt": now}}, {'_id':False}))
+    elif type_receive == 'onshow':
+        # musicals = 'onshow'
+        musicals = list(db.musicals.find({}, {'_id':False}))
+    else:
+        # musicals = 'else'
+        musicals = list(db.musicals.find({}, {'_id':False}))
+
+    print('musicals', musicals)
     return jsonify({'musicals': musicals})
 
 

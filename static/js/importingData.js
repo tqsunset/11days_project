@@ -1,15 +1,15 @@
 $(document).ready(function () {
-    getWholeMusicals()
+    getComingMusicals()
 });
 
 
-function getWholeMusicals() {
-    console.log('getWholeMusicals() 실행됨')
-    $('#owl-example').empty()
+function getComingMusicals() {
+    console.log('getComingMusicals() 실행됨')
+    $('.owl-wrapper').empty()
 
     $.ajax({
         type: "GET",
-        url: "/musicals",
+        url: "/musicals?type=coming",
         data: {},
         success: function (response) {
             musicals = response['musicals']
@@ -28,12 +28,19 @@ function getWholeMusicals() {
                 castDetail = JSON.stringify(musical['cast_detail'])  // 현 html페이지에서 내용을 볼 수 있게 dict을 string으로 변환
                 link = musical['link']
                 desc = musical['desc']
+                img_url = musical['img_url']
 
-                temp_html = `<div class="item">
-                            <img class="item-img"
-                                 src=""
-                                 alt="">
-                        </div>`
+                temp_html = `<div class="owl-item" style="width: 213px;">
+                                        <div class="item">
+                                            <img class="item-img"
+                                                 src="${img_url}"
+                                                 alt="">
+                                        </div>
+                                    </div>`
+
+                $('.owl-wrapper').append(temp_html)
+
+
             }
 
 
