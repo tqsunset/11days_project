@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>All My Musical🎷</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS
+    ================================================ -->
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Font-awesome.min css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <!-- Responsive Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- Js -->
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&display=swap"
+          rel="stylesheet">
+    <!--서버에서 데이터베이스 읽어오는 script-->
+    <script src="{{ url_for('static', filename='js/importingData.js') }}"></script>
+
+
+</head>
+
+<body>
+<!-- 헤더이미지 -->
+<section id="hero-area">
+    <img class="img-responsive" src="{{ url_for('static', filename='images/header.jpeg')}}" alt="">
+</section>
+<!-- 헤더 시작-->
+<nav id="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">
+                                    <span class="header-title">All My Musical🎷</span>
+                                </a>
+
+                            </div>
+
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right" id="top-nav">
+                                    <li><a href="#hero-area">Comming Soon</a></li>
+                                    <li><a href="#price">Performing Now</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- 헤더 끝 -->
+
+<!-- 커밍순 시작 -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="title">
+                        <h1><span>Comming Soon</span></h1>
+                    </div>
+                    <div id="owl-example" class="owl-carousel">
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165720_01.448.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165779_01.554.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165875_01.410.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_166404_01.832.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/05/0400012105_165033_01.041.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166835_01.149.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166852_01.252.gif"
+                                 alt="">
+                        </div>
+                        <div class="item">
+                            <img class="item-img"
+                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166583_01.800.gif"
+                                 alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 커밍순 끝 -->
+
+<!--
+about-us start
+============================== -->
+<section id="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms"
+                         src="{{ url_for('static', filename='images/cooker-img.png') }}" alt="cooker-img">
+                    <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">Your <span>Restaurant’s</span> </br>
+                        Website Has To Look <span>Good</span>
+                    </h1>
+                    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #call-to-action close -->
+<!--
+price start
+============================ -->
+<section id="price">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1 class="heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">our
+                        <span>MENU</span> the <span>PRICE</span></h1>
+                    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+                    <div class="pricing-list">
+                        <div class="title">
+                            <h3>Featured <span>on the week</span></h3>
+                        </div>
+                        <ul>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Pancakes n' Such</h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 25.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Homestyle Chicken Pot Pie</h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 10.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Cereal, Panecillos y Frutas </h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 5.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Meat of Skewers</h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 15.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="700ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Steak with a Garlic and Parsley Risotto</h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 75.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="800ms">
+                                <div class="item">
+                                    <div class="item-title">
+                                        <h2>Caesar Salad</h2>
+                                        <div class="border-bottom"></div>
+                                        <span>$ 7.00</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="btn btn-default pull-right wow bounceIn" data-wow-duration="500ms"
+                           data-wow-delay="1200ms" href="#" role="button">More Info</a>
+                    </div>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #price close -->
+</body>
+</html>
