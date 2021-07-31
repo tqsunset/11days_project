@@ -7,7 +7,7 @@ db = client.dbsparta
 
 @app.route('/')
 def home():
-    return render_template('ref.html')
+    return render_template('index.html')
 
 @app.route('/musicals', methods=['GET'])
 def read_musicals():

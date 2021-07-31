@@ -3,44 +3,77 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Restaurant One Page HTML5 Template</title>
+		<title>All My Musical🎷</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSS
         ================================================ -->
         <!-- Owl Carousel -->
-		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
         <!-- bootstrap.min css -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
         <!-- Font-awesome.min css -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+            <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
 
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <!-- Responsive Stylesheet -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 		<!-- Js -->
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/jquery.nav.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&display=swap" rel="stylesheet">
 	</head>
+
+    <style>
+        #hero-area{
+            width: auto !important;
+        }
+        .navbar-brand {
+            font-family: 'Limelight', cursive;
+            font-size: 4vw;
+        }
+        nav .block {
+            margin-top: -7.5vw;
+            padding: 25px 40px;
+            background: rgba(255, 255, 255, 1.0);
+            border-radius: 10px;
+        }       
+        .img-responsive {
+        transition: all ease 0.2s 0s;
+        border: 1px solid #828282;
+        margin-bottom: 4vw;
+        
+        }
+        #slider .block .owl-carousel img {
+            padding: 0px;
+        }
+        .item {
+            transition: all ease 0.2s 0s;
+        }
+        .item:hover {
+            opacity: 1;
+            filter: grayscale(100%);
+            transition: all ease 0.2s 0s;
+        }
+
+    </style>
+
 	<body>
-	<!--
-	header-img start 
-	============================== -->
+	<!-- 헤더이미지 -->
     <section id="hero-area">
-      <img class="img-responsive" src="images/header.jpg" alt="">
-    </section>
-	<!--
-    Header start 
-	============================== -->
+        <img class="img-responsive" src="{{ url_for('static', filename='images/header.jpeg') }}" alt="">    </section>
+	<!-- 헤더 시작-->
 	<nav id="navigation">
         <div class="container">
             <div class="row">
@@ -57,72 +90,69 @@
                                 <span class="icon-bar"></span>
                               </button>
                                   <a class="navbar-brand" href="#">
-                                    <img src="images/logo.png" alt="Logo">
+                                    <span>All My Musical🎷</span>
                                   </a>
 
                             </div>
 
-                            <!-- Collect the nav links, forms, and other content for toggling -->
+                           
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav navbar-right" id="top-nav">
-                                <li><a href="#hero-area">Home</a></li>
-                                <li><a href="#about-us">about us</a></li>
-                                <li><a href="#blog">Blog</a></li>
-                                <li><a href="#price">menu</a></li>
-                                <li><a href="#subscribe">news</a></li>
-                                <li><a href="#contact-us">contacts</a></li>
+                                <li><a href="#hero-area">Comming Soon</a></li>
+                                <li><a href="#price">Performing Now</a></li>
                               </ul>
-                            </div><!-- /.navbar-collapse -->
-                          </div><!-- /.container-fluid -->
+                            </div>
+                          </div>
                         </nav>
                     </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .container close -->
-	</nav><!-- header close -->
-    <!--
-    Slider start
-    ============================== -->
+                </div>
+            </div>
+        </div>
+	</nav><!-- 헤더 끝 -->
+
+    <!-- 커밍순 시작 -->
     <section id="slider">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                         <div class="title">
-                            <h3>Featured <span>Works</span></h3>
+                            <h1><span>Comming Soon</span></h1>
                         </div>
                         <div id="owl-example" class="owl-carousel">
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-1.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165720_01.448.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-2.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165779_01.554.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-3.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165875_01.410.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-4.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_166404_01.832.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-1.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/05/0400012105_165033_01.041.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-2.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166835_01.149.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-3.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166852_01.252.gif" alt="">
                             </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/slider-img-4.jpg" alt="">
+                            <div class="item">
+                                <img class="img-responsive" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166583_01.800.gif" alt="">
                             </div>
                         
                         </div>
                     </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .container close -->
-    </section><!-- slider close -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 커밍순 끝 -->
+
     <!--
     about-us start
     ============================== -->
@@ -131,7 +161,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/cooker-img.png" alt="cooker-img">
+                        <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="{{ url_for('static', filename='images/cooker-img.png') }}" alt="cooker-img">
                         <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms" >Your <span>Restaurant’s</span> </br> Website Has To Look <span>Good</span>
                         </h1>
                         <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </br>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
