@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    getComingMusicals()
+    // getComingMusicals()
 });
 
 
@@ -30,21 +30,15 @@ function getComingMusicals() {
                 desc = musical['desc']
                 img_url = musical['img_url']
 
-                temp_html = `<div class="owl-item" style="width: 213px;">
-                                        <div class="item">
-                                            <img class="item-img"
-                                                 src="${img_url}"
-                                                 alt="">
-                                        </div>
-                                    </div>`
+                temp_html = `<div class="item">
+                                <img class="item-img" src="${img_url}" alt="">
+                            </div>`
 
-                $('.owl-wrapper').append(temp_html)
+                $('#owl-item').append(temp_html)
 
 
             }
 
-
-            alert("get works!")
         }
 
     })
