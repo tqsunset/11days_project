@@ -262,67 +262,8 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   padding: 40px 0px;
 }
 
-/*-- price Start --*/
-#price {
-  padding: 70px 0px;
-}
-#price .block > p {
-  color: #9D9D9D;
-  font-size: 16px;
-  line-height: 26px;
-  padding: 40px 133px 0;
-  text-align: center;
-}
-#price .block .pricing-list {
-  padding-top: 85px;
-}
-#price .block .pricing-list ul {
-  padding: 0 0 30px;
-  margin: 0;
-}
-#price .block .pricing-list ul li {
-  padding: 21px 0px;
-}
-#price .block .pricing-list ul li .item .item-title {
-  position: relative;
-}
-#price .block .pricing-list ul li .item .item-title h2 {
-  display: inline-block;
-  position: relative;
-  z-index: 99;
-  background: #fff;
-}
-#price .block .pricing-list ul li .item .item-title .border-bottom {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 1px;
-  border: 1px dotted #C9C9C9;
-  margin-top: 20px;
-}
-#price .block .pricing-list ul li .item .item-title span {
-  float: right;
-  color: #938463;
-}
-#price .block .pricing-list ul li .item p {
-  padding: 12px 0 0px;
-  color: #949494;
-}
-#price .block .pricing-list .btn {
-  padding: 28px 105px;
-  border-radius: 0px;
-  background: none;
-  color: #FF4F02;
-  border: 1px solid #FF4F02;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 600;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
-
-}
-
+/*-- chart Start --*/
+/*전체 차트란*/
 .container2 {
     max-width: 1200px;
     min-width: 650px;
@@ -330,31 +271,36 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
     padding: 50px;
 }
 
+/*차트*/
 .chart {
     display: grid;
-    border: 2px solid #94c6e7;
+    border: 2px solid rgba(57, 57, 57, 0.7);
     position: relative;
     overflow: hidden;
 }
 
+/*홀수번째 작품 막대바 배경*/
 .chart-row {
     display: grid;
     grid-template-columns: 180px 1fr;
     background-color: #ffffff;
 }
 
+/*짝수번째 작품 막대바 배경*/
 .chart-row:nth-child(odd) {
-    background-color: rgba(225, 243, 255, 0.5);
+    background-color: rgba(243, 243, 243, 0.5);
 }
 
+/*날짜 구분란(가로 맨 위)*/
 .chart-period {
-    color: #363636;
-    background-color: rgb(182, 226, 253) !important;
-    border-bottom: 2px solid #a7ddff;
-    grid-template-columns: 180px repeat(9, 1fr);
+    color: #dedede;
+    background-color: rgb(75, 75, 75) !important;
+    border-bottom: 2px solid #393939;
+    grid-template-columns: 180px repeat(16, 1fr);
 
 }
 
+/*날짜 구분란(가로 맨 위) 글씨 디자인*/
 .chart-period > span {
     text-align: center;
     font-size: 13px;
@@ -363,86 +309,96 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
     padding: 15px 0;
 }
 
+/*작품 제목란(세로 맨 앞)*/
+.chart-row-item {
+    background-color: rgb(75, 75, 75);
+    border: 1px solid #393939;
+    border-top: 0;
+    border-left: 0;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #dedede;
+}
+
+/*막대바 표시 부분 배경 관련 (줄 개수 등)*/
 .chart-lines {
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: transparent;
-    grid-template-columns: 180px repeat(18, 1fr);
+    grid-template-columns: 180px repeat(16, 1fr);
 }
 
+/*막대바 표시부분 세로 구분선*/
 .chart-lines > span {
     display: block;
-    border-right: 1px solid rgba(182, 226, 253, 0.31);
+    border-right: 1px solid rgb(75, 75, 75, 0.3);
 }
 
-.chart-row-item {
-    background-color: rgb(184, 226, 252);
-    border: 1px solid #a7ddff;
-    border-top: 0;
-    border-left: 0;
-    padding: 20px 0;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #383838;
-}
-
+/*막대바 표시 구역 & 가로 구분선*/
 .chart-row-bars {
     list-style: none;
     display: grid;
     padding: 15px 0;
     margin: 0;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(16, 1fr);
     grid-gap: 10px 0;
-    border-bottom: 1px solid #a7ddff;
+    border-bottom: 1px solid rgb(75, 75, 75, 0.3);
 }
 
-#chart > li {
+/*막대 바 관련*/
+#price .container2 .chart ul li {
     font-weight: 450;
-    text-align: left;
-    font-size: 15px;
+    text-align: center;
+    font-size: 13px;
     min-height: 15px;
-    background-color: #708090;
     padding: 5px 15px;
     color: #fff;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
+/*첫번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-one {
-    grid-column: 2/9;
-    background-color: #0372ff;
+    grid-column: 1/4;
+    background-color: #9a972b;
 }
 
+/*두번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-two {
-    grid-column: 2/2;
+    grid-column: 1/8;
     background-color: #0080FF;
 }
 
+/*세번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-three {
-    grid-column: 3/5;
-    background-color: #57A0D3;
+    grid-column: 1/6;
+    background-color: #168046;
 }
 
+/*네번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-four {
-    grid-column: 3/9;
-    background-color: #0E4D92;
+    grid-column: 3/14;
+    background-color: #512180;
 }
 
+/*다섯번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-five {
-    grid-column: 7/9;
+    grid-column: 3/10;
     background-color: #4F97A3;
 }
 
+/*여섯번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-six {
-    grid-column: 8/9;
-    background-color: #73C2FB;
+    grid-column: 4/17;
+    background-color: #af3232;
 }
 
+/*일곱번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
 ul .chart-li-seven {
-    grid-column: 9/9;
-    background-color: #0080FF;
+    grid-column: 4/4;
+    background-color: #b14a9b;
 }

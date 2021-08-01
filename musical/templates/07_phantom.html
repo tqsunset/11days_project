@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title><하데스타운> (MUSICAL HADESTOWN)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+/*공연 포스터 : 이미지 주소만 변경하여 활용!*/
+        .image {
+            width: 250px;
+            height: 350px;
+            background-image: url(https://ticketimage.interpark.com/Play/image/large/21/21005196_p.gif);
+            background-size: cover;
+            background-position: center;
+            margin: 10px 0 20px 0;
+        }
+
+        .title {
+            margin-top: 50px;
+            font-size: 30px;
+        }
+
+        .eng_name {
+            font-size: 20px;
+            color: gray;
+        }
+
+        .box {
+            display: flex;
+            border-bottom: 1px solid rgba(212, 212, 212, 0.38);
+            margin-top: 20px;
+        }
+
+        .name {
+            width: 100px;
+            margin-left: 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .casting-box {
+            margin: 10px 10px 15px 10px;
+        }
+
+        .casting {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .cast {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 10px 0px 0px;
+            border-bottom: 1px solid rgba(212, 212, 212, 0.38);
+
+            font-size: 15px;
+            font-weight: bolder;
+            color: #0a0a0a;
+            text-align: center;
+        }
+
+        .cast ul > li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .img-thumbnail {
+            width: 120px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .actor {
+            color: #6f6f6f;
+        }
+
+        .trailer-box {
+            margin: 10px 10px 15px 10px;
+        }
+
+        .video {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .trailer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 10px 0px 0px;
+            border-bottom: 1px solid rgba(212, 212, 212, 0.38);
+
+            font-size: 15px;
+            font-weight: bolder;
+            color: #0a0a0a;
+            text-align: center;
+        }
+
+        .trailer ul > li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .button-box {
+            margin-left: auto;
+        }
+
+        .btn-order {
+            text-align: center;
+            width: 200px;
+            padding: 30px 30px;
+            border-radius: 0px;
+            background: none;
+            color: #FF4F02;
+            border: 1px solid #FF4F02;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 500;
+            -webkit-transition: .3s all;
+            -o-transition: .3s all;
+            transition: .3s all;
+        }
+
+        .btn-order:hover {
+            background: #ff530a;
+            color: #fff;
+        }
+
+        .page {
+            width: 920px;
+            margin: auto;
+            border: transparent;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="page">
+    <div class="title">
+<!--뮤지컬 이름 구간 시작-->
+        뮤지컬 이름&nbsp; <span class="eng_name">영어이름</span>
+<!--뮤지컬 이름 구간 끝-->
+    </div>
+        <div class="box">
+            <div class="image"></div>
+<!--공연정보 구간 시작 / 레이아웃 때문에 등급, 시간 추가(플레이db에 정보있음)했으나 어려울 경우 삭제해도 무방-->
+            <div class="name">
+                <p>장소</p>
+                <p>공연 기간</p>
+                <p>관람 등급</p>
+                <p>공연 시간</p>
+            </div>
+            <div class="content">
+                <p>극장이름</p>
+                <p>공연일자</p>
+                <p>등급</p>
+                <p>시간</p>
+            </div>
+<!--공연정보 구간 끝-->
+<!--예매링크 사이트 연결 버튼 시작-->
+            <div class="button-box">
+                    <P><button type="button" onclick="window.open('https://tickets.interpark.com/goods/21005196?utm_source=google&utm_medium=cpc&utm_campaign=ticket_play_20210617_pc_cpc_paidsearch&utm_content=consider_34&utm_term=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&_emk_keyword=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&gclid=CjwKCAjwi9-HBhACEiwAPzUhHGAxtm6ynhBhYkmgrx6a_-GzUhF-SKJJz1qKg9NnekKTgJ66BngiShoCAHsQAvD_BwE#')" class="btn-order">예매하기<br>(인터파크)<br/>
+                    </button></P>
+                    <button type="button" onclick="window.open('http://ticket.yes24.com/Perf/39338')" class="btn-order">예매하기<br>(YES24)<br/>
+                    </button>
+            </div>
+<!--예매링크 사이트 연결 버튼 끝-->
+        </div>
+            <div class="casting-box"></div>
+            <div class="cast">
+                <ul><span class="casting"><p>캐스팅</p></span>
+<!--인물 캐스팅 구간 시작-->
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/10/08/0400041008_22946_02848.gif"><br>오르페우스<br/><span class="actor">조형균</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/15/10/0400041510_38358_02.gif"><br>오르페우스<br/><span class="actor">박강현</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/16/09/0400041609_40250_02232.606.gif"><br>오르페우스<br/><span class="actor">시우민</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/08/11/0400040811_11862_02831.gif"><br>헤르메스<br/><span class="actor">최재림</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/11/07/0400041107_26127_021.gif"><br>헤르메스<br/><span class="actor">강홍석</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4211_011.jpg"><br>페르세포네<br/><span class="actor">김선영</span></li><p>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4263_012142.gif"><br>페르세포네<br/><span class="actor">박혜나</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/18/10/0400041810_43712_02.gif"><br>에우리디케<br/><span class="actor">김환희</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/19/04/0400041904_44617_02036.gif"><br>에우리디케<br/><span class="actor">김수하</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_1967_011922.gif"><br>하데스<br/><span class="actor">지현준</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3867_013938.854.gif"><br>하데스<br/><span class="actor">양준모</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3586_014716.gif"><br>하데스<br/><span class="actor">김우형</span></li>
+                </ul>
+            </div>
+<!--인물 캐스팅 구간 끝-->
+            <div class="trailer-box"></div>
+            <div class="trailer">
+<!--유튜브 임베드 구간 시작 / width, height 아래값으로 고정 필요-->
+                <ul><span class="video"><p>홍보 영상</p></span>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/3rTE2Ux6f3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>한국 초연 멤버 12인의 캐스트 공개<br/><span class="actor">하데스타운</span></li>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/UU0V7mY3lig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>배우들이 직접 소개하는 "하데스타운 최초 한국 공연"<br/><span class="actor">하데스타운</span></li><p>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/7Txlpjh3Cjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>첫 한국어 음원 Epic III 뮤직비디오 공개<br/><span class="actor">조형균</span></li>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/BGovZnJnEIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>한국어 음원 Epic III 두 번째 뮤직비디오 공개<br/><span class="actor">박강현</span></li><p>
+                </ul>
+<!--유튜브 임베드 구간 끝-->
+            </div>
+</div>
+
+</body>
+
+</html>
