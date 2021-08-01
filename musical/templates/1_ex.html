@@ -20,7 +20,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <title><하데스타운> (MUSICAL HADESTOWN)</title>
+    <title><엑스칼리버></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
         .image {
             width: 250px;
             height: 350px;
-            background-image: url(https://ticketimage.interpark.com/Play/image/large/21/21005196_p.gif);
+            background-image: url('https://ticketimage.interpark.com/Play/image/large/21/21005816_p.gif');
             background-size: cover;
             background-position: center;
             margin: 10px 0 20px 0;
@@ -175,12 +175,13 @@
 <div class="page">
     <div class="title">
 <!--뮤지컬 이름 구간 시작-->
-        뮤지컬 이름&nbsp; <span class="eng_name">영어이름</span>
+        엑스칼리버 <span class="eng_name">Excalibur</span>
 <!--뮤지컬 이름 구간 끝-->
     </div>
+
         <div class="box">
             <div class="image"></div>
-<!--공연정보 구간 시작 / 레이아웃 때문에 등급, 시간 추가(플레이db에 정보있음)했으나 어려울 경우 삭제해도 무방-->
+
             <div class="name">
                 <p>장소</p>
                 <p>공연 기간</p>
@@ -188,17 +189,31 @@
                 <p>공연 시간</p>
             </div>
             <div class="content">
-                <p>극장이름</p>
-                <p>공연일자</p>
-                <p>등급</p>
-                <p>시간</p>
+                <p>블루스퀘어 신한카드홀(구인터파크홀)</p>
+                <p>2021.8.17~2021.11.07</p>
+                <p>8세이상</p>
+                <p>175m(inter:20m)</p>
             </div>
+
+
+<!--            <div class="name">-->
+<!--                <p>장소</p>-->
+<!--                <p>공연 기간</p>-->
+<!--                <p>관람 등급</p>-->
+<!--                <p>공연 시간</p>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <p>극장이름</p>-->
+<!--                <p>공연일자</p>-->
+<!--                <p>등급</p>-->
+<!--                <p>시간</p>-->
+<!--            </div>-->
 <!--공연정보 구간 끝-->
 <!--예매링크 사이트 연결 버튼 시작-->
             <div class="button-box">
-                    <P><button type="button" onclick="window.open('https://tickets.interpark.com/goods/21005196?utm_source=google&utm_medium=cpc&utm_campaign=ticket_play_20210617_pc_cpc_paidsearch&utm_content=consider_34&utm_term=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&_emk_keyword=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&gclid=CjwKCAjwi9-HBhACEiwAPzUhHGAxtm6ynhBhYkmgrx6a_-GzUhF-SKJJz1qKg9NnekKTgJ66BngiShoCAHsQAvD_BwE#')" class="btn-order">예매하기<br>(인터파크)<br/>
+                    <P><button type="button" alert="엑스칼리버 보러갈 사람?" onclick="window.open('https://tickets.interpark.com/goods/21005816')" class="btn-order">예매하기<br>(인터파크)<br/>
                     </button></P>
-                    <button type="button" onclick="window.open('http://ticket.yes24.com/Perf/39338')" class="btn-order">예매하기<br>(YES24)<br/>
+                    <button type="button" alert="오직 인터파크에서만 예약가능!" class="btn-order">예매하기<br>(YES24)<br/>
                     </button>
             </div>
 <!--예매링크 사이트 연결 버튼 끝-->
@@ -207,18 +222,18 @@
             <div class="cast">
                 <ul><span class="casting"><p>캐스팅</p></span>
 <!--인물 캐스팅 구간 시작-->
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/10/08/0400041008_22946_02848.gif"><br>오르페우스<br/><span class="actor">조형균</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/15/10/0400041510_38358_02.gif"><br>오르페우스<br/><span class="actor">박강현</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/16/09/0400041609_40250_02232.606.gif"><br>오르페우스<br/><span class="actor">시우민</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/08/11/0400040811_11862_02831.gif"><br>헤르메스<br/><span class="actor">최재림</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/11/07/0400041107_26127_021.gif"><br>헤르메스<br/><span class="actor">강홍석</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4211_011.jpg"><br>페르세포네<br/><span class="actor">김선영</span></li><p>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4263_012142.gif"><br>페르세포네<br/><span class="actor">박혜나</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/18/10/0400041810_43712_02.gif"><br>에우리디케<br/><span class="actor">김환희</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/19/04/0400041904_44617_02036.gif"><br>에우리디케<br/><span class="actor">김수하</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_1967_011922.gif"><br>하데스<br/><span class="actor">지현준</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3867_013938.854.gif"><br>하데스<br/><span class="actor">양준모</span></li>
-                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3586_014716.gif"><br>하데스<br/><span class="actor">김우형</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/09/11/0400040911_18920_023.gif"><br>아더<br/><span class="actor">김준수</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/09/10/0400040910_18104_02714.gif"><br>아더<br/><span class="actor">카이</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/13/10/0400041310_33399_02849.gif"><br>아더<br/><span class="actor">서은광</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/19/02/0400041902_44361_02954.gif"><br>아더<br/><span class="actor">도겸</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_276_01.j736.gif"><br>랜슬럿<br/><span class="actor">이지훈</span></li>
+                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4500_011553.gif"><br>모르가나<br/><span class="actor">신영숙</span></li><p>
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_4263_012142.gif"><br>페르세포네<br/><span class="actor">박혜나</span></li>-->
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/18/10/0400041810_43712_02.gif"><br>에우리디케<br/><span class="actor">김환희</span></li>-->
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/19/04/0400041904_44617_02036.gif"><br>에우리디케<br/><span class="actor">김수하</span></li>-->
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_1967_011922.gif"><br>하데스<br/><span class="actor">지현준</span></li>-->
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3867_013938.854.gif"><br>하데스<br/><span class="actor">양준모</span></li>-->
+<!--                    <li><img class="img-thumbnail" src="https://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040004/07/01/0400040701_3586_014716.gif"><br>하데스<br/><span class="actor">김우형</span></li>-->
                 </ul>
             </div>
 <!--인물 캐스팅 구간 끝-->
@@ -226,10 +241,10 @@
             <div class="trailer">
 <!--유튜브 임베드 구간 시작 / width, height 아래값으로 고정 필요-->
                 <ul><span class="video"><p>홍보 영상</p></span>
-                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/3rTE2Ux6f3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>한국 초연 멤버 12인의 캐스트 공개<br/><span class="actor">하데스타운</span></li>
-                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/UU0V7mY3lig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>배우들이 직접 소개하는 "하데스타운 최초 한국 공연"<br/><span class="actor">하데스타운</span></li><p>
-                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/7Txlpjh3Cjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>첫 한국어 음원 Epic III 뮤직비디오 공개<br/><span class="actor">조형균</span></li>
-                    <li><iframe width="415" height="235" src="https://www.youtube.com/embed/BGovZnJnEIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>한국어 음원 Epic III 두 번째 뮤직비디오 공개<br/><span class="actor">박강현</span></li><p>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/watch?v=EBqMC8lEyK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>아더 캐스팅 보러가기<br/><span class="actor">엑스칼리버 - 아더</span></li>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/watch?v=zKHH0FJp7u8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>렌슬럿 캐스팅 보러가기<br/><span class="actor">엑스칼리버 - 렌슬럿</span></li><p>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/watch?v=9qZnIZbGUAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>모르가나 캐스팅 보러가기 <br/><span class="actor">엑스칼리버 - 모르가나</span></li>
+                    <li><iframe width="415" height="235" src="https://www.youtube.com/watch?v=BBrgCUwBa-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>멀린 캐스팅 보러가기<br/><span class="actor">엑스칼리버 - 멀린</span></li><p>
                 </ul>
 <!--유튜브 임베드 구간 끝-->
             </div>

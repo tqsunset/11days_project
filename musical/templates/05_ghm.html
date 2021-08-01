@@ -20,7 +20,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <title><하데스타운> (MUSICAL HADESTOWN)</title>
+    <title>상세페이지</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
@@ -169,40 +169,116 @@
         }
 
     </style>
+
+
+    <script type ="text/javascript">
+
+        $(document).ready(function () {
+            showDetails();
+        });
+
+        function showDetails() {
+            $.ajax({
+                type: "GET",
+                url: "/detail",
+                data: {},
+                success: function (response) {
+                    let dbs = response['db']
+                    console.log(dbs)
+
+                    for (let i = 0; i < dbs.length; i++) {
+                        let dbdetail = dbs[i]
+
+
+                        let titles = dbdetail['title']
+                        let genres = dbdetail['genre']
+                        let startDates = dbdetail['start_date']
+                        let endDates = dbdetail['end_date']
+                        let locs = dbdetail['location']
+                        let casts = dbdetail['cast']
+                        let staffs = dbdetail['staff']
+                        let castDetails = JSON.stringify(dbdetail['cast_detail'])  // 현 html페이지에서 내용을 볼 수 있게 dict을 string으로 변환
+                        let links = dbdetail['link']
+                        let descs = dbdetail['desc']
+
+                        if (staff == undefined){
+                            staff = ""
+                        }
+
+                        let temp_html = ``
+
+                        temp_html = `
+                                     <div class="title">
+                                    <!--뮤지컬 이름 구간 시작-->
+                                        "${titles}" <span class="eng_name">${titles}</span>
+                                    <!--뮤지컬 이름 구간 끝-->
+                                    </div>
+
+                                     <div class="box">
+                                                <div class="image"></div>
+                                    <!--공연정보 구간 시작 / 레이아웃 때문에 등급, 시간 추가(플레이db에 정보있음)했으나 어려울 경우 삭제해도 무방-->
+                                                <div class="name">
+                                                    <p>장소</p>
+                                                    <p>공연 기간</p>
+                                                    <p>관람 등급</p>
+                                                    <p>공연 시간</p>
+                                                </div>
+                                                <div class="content">
+                                                    <p>${locs}</p>
+                                                    <p>${startDates}</p>
+                                                    <p>${genres}</p>
+                                                    <p></p>
+                                                </div>
+                                       </div>`
+
+
+
+
+                        $('#details').append(temp_html)
+
+                       }
+                    }}
+            )}
+
+</script>
 </head>
 
 <body>
 <div class="page">
-    <div class="title">
-<!--뮤지컬 이름 구간 시작-->
-        뮤지컬 이름&nbsp; <span class="eng_name">영어이름</span>
-<!--뮤지컬 이름 구간 끝-->
-    </div>
-        <div class="box">
-            <div class="image"></div>
-<!--공연정보 구간 시작 / 레이아웃 때문에 등급, 시간 추가(플레이db에 정보있음)했으나 어려울 경우 삭제해도 무방-->
-            <div class="name">
-                <p>장소</p>
-                <p>공연 기간</p>
-                <p>관람 등급</p>
-                <p>공연 시간</p>
-            </div>
-            <div class="content">
-                <p>극장이름</p>
-                <p>공연일자</p>
-                <p>등급</p>
-                <p>시간</p>
-            </div>
-<!--공연정보 구간 끝-->
-<!--예매링크 사이트 연결 버튼 시작-->
-            <div class="button-box">
-                    <P><button type="button" onclick="window.open('https://tickets.interpark.com/goods/21005196?utm_source=google&utm_medium=cpc&utm_campaign=ticket_play_20210617_pc_cpc_paidsearch&utm_content=consider_34&utm_term=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&_emk_keyword=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&gclid=CjwKCAjwi9-HBhACEiwAPzUhHGAxtm6ynhBhYkmgrx6a_-GzUhF-SKJJz1qKg9NnekKTgJ66BngiShoCAHsQAvD_BwE#')" class="btn-order">예매하기<br>(인터파크)<br/>
-                    </button></P>
-                    <button type="button" onclick="window.open('http://ticket.yes24.com/Perf/39338')" class="btn-order">예매하기<br>(YES24)<br/>
-                    </button>
-            </div>
+    <div id = "details"></div>
+<!--    <div class="title">-->
+<!--    <div class="title">-->
+<!--&lt;!&ndash;뮤지컬 이름 구간 시작&ndash;&gt;-->
+<!--        뮤지컬 이름&nbsp; <span class="eng_name">영어이름</span>-->
+<!--&lt;!&ndash;뮤지컬 이름 구간 끝&ndash;&gt;-->
+<!--    </div>-->
+<!--        <div class="box">-->
+<!--            <div class="image"></div>-->
+<!--&lt;!&ndash;공연정보 구간 시작 / 레이아웃 때문에 등급, 시간 추가(플레이db에 정보있음)했으나 어려울 경우 삭제해도 무방&ndash;&gt;-->
+<!--            <div class="name">-->
+<!--                <p>장소</p>-->
+<!--                <p>공연 기간</p>-->
+<!--                <p>관람 등급</p>-->
+<!--                <p>공연 시간</p>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <p>극장이름</p>-->
+<!--                <p>공연일자</p>-->
+<!--                <p>등급</p>-->
+<!--                <p>시간</p>-->
+<!--            </div>-->
+
+<!--&lt;!&ndash;공연정보 구간 끝&ndash;&gt;-->
+<!--&lt;!&ndash;예매링크 사이트 연결 버튼 시작&ndash;&gt;-->
+<!--            <div class="button-box">-->
+<!--                    <P><button type="button" onclick="window.open('https://tickets.interpark.com/goods/21005196?utm_source=google&utm_medium=cpc&utm_campaign=ticket_play_20210617_pc_cpc_paidsearch&utm_content=consider_34&utm_term=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&_emk_keyword=%ED%95%98%EB%8D%B0%EC%8A%A4%ED%83%80%EC%9A%B4&gclid=CjwKCAjwi9-HBhACEiwAPzUhHGAxtm6ynhBhYkmgrx6a_-GzUhF-SKJJz1qKg9NnekKTgJ66BngiShoCAHsQAvD_BwE#')" class="btn-order">예매하기<br>(인터파크)<br/>-->
+<!--                    </button></P>-->
+<!--                    <button type="button" onclick="window.open('http://ticket.yes24.com/Perf/39338')" class="btn-order">예매하기<br>(YES24)<br/>-->
+<!--                    </button>-->
+<!--            </div>-->
+
 <!--예매링크 사이트 연결 버튼 끝-->
-        </div>
+
             <div class="casting-box"></div>
             <div class="cast">
                 <ul><span class="casting"><p>캐스팅</p></span>
@@ -233,7 +309,8 @@
                 </ul>
 <!--유튜브 임베드 구간 끝-->
             </div>
-</div>
+    </div>
+
 
 </body>
 

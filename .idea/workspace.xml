@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b7272-a270-425a-82ea-f23966247ec8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/musical/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/musical/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musical/.idea/musical.iml" beforeDir="false" afterPath="$PROJECT_DIR$/musical/.idea/musical.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musical/templates/idx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musical/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/musical/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musical/templates/01_dracula.html" beforeDir="false" afterPath="$PROJECT_DIR$/musical/templates/3_hades.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musical/templates/02_redbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/musical/templates/2_billy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musical/templates/03_beetlejuice.html" beforeDir="false" afterPath="$PROJECT_DIR$/musical/templates/1_ex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musical/templates/05_ghm.html" beforeDir="false" afterPath="$PROJECT_DIR$/musical/templates/05_ghm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musical/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/musical/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,15 +41,43 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app (1)">
+    <configuration name="05_ghm.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/11days_project/musical/templates/05_ghm.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="11days_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/musical" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/musical/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="11days_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,6 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="JavaScript Debug.05_ghm.html" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
@@ -76,13 +118,35 @@
       <updated>1627398793779</updated>
       <workItem from="1627398800762" duration="87000" />
       <workItem from="1627748084374" duration="8000" />
+      <workItem from="1627793969820" duration="8874000" />
+      <workItem from="1627807904065" duration="930000" />
+      <workItem from="1627808965387" duration="166000" />
+      <workItem from="1627809134576" duration="245000" />
+      <workItem from="1627809392224" duration="55000" />
+      <workItem from="1627809460176" duration="597000" />
+      <workItem from="1627810066141" duration="127000" />
+      <workItem from="1627810196219" duration="354000" />
+      <workItem from="1627810565987" duration="1182000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/11days_project$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1627810730674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/musical" />
     <SUITE FILE_PATH="coverage/11days_project$app.coverage" NAME="app Coverage Results" MODIFIED="1627398883847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/musical" />
   </component>
 </project>

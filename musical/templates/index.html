@@ -23,7 +23,7 @@
 		<!-- Js -->
     <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
-    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
+<!--    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>-->
     <script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -34,6 +34,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&display=swap" rel="stylesheet">
+
+<!--    <script>-->
+<!--         $(document).ready(function () {-->
+<!--            carousel();-->
+<!--        });-->
+
+
+<!--        function carousel() {-->
+<!--            $.ajax({-->
+<!--                type: "GET",-->
+<!--                url: "/musicals",-->
+<!--                data: {},-->
+<!--                success: function (response) {-->
+<!--                    carousels = response['carousels']-->
+<!--                    for (let i = 0; i < carousels.length; i++) {-->
+
+<!--                        carousels = carousels[i]-->
+<!--                        title = carousels['title']-->
+<!--                        img_url = carousels['img_url']-->
+<!--                        dating = carousels['date']-->
+
+<!--                        temp_html = ` <div className="item">-->
+<!--                                    <img className="item-img"-->
+<!--                                         src="${img_url}"-->
+<!--                                         alt="">-->
+<!--                                </div>`-->
+
+
+<!--                    }-->
+<!--                    $('#owl-example').html(temp_html)-->
+<!--                   }-->
+<!--                }-->
+<!--            )}-->
+
+
+
+<!--    </script>-->
+
 
     </head>
 
@@ -91,7 +129,7 @@
                         </div>
                         <div id="owl-example" class="owl-carousel">
                             <div class="item">
-                                <img class="item-img" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165720_01.448.gif" alt="">
+                                <img class="item-img" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165720_01.448.gif" alt="" >
                             </div>
                             <div class="item">
                                 <img class="item-img" src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165779_01.554.gif" alt="">
