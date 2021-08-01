@@ -20,14 +20,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
-
-
+    <!-- Js -->
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&display=swap"
           rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -230,20 +236,4 @@
 </section><!-- #공연차트 close -->
 </body>
 
-<!-- Js -->
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
-<!--서버에서 데이터베이스 읽어오는 script-->
-<script src="{{ url_for('static', filename='js/importingData.js') }}"></script>
-
-<script defer src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
-
-<script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
-<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
-<script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
-<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
-<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
-<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
 </html>
