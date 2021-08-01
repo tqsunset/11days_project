@@ -9,17 +9,18 @@
     <!-- CSS
     ================================================ -->
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}">
     <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
     <!-- Font-awesome.min css -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
     <!-- Js -->
     <script src="{{ url_for('static', filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script> -->
@@ -30,16 +31,19 @@
     <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
     <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/importingMainData.js') }}"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&display=swap"
           rel="stylesheet">
+
 </head>
 
 <body>
 <!-- 헤더이미지 -->
 <section id="hero-area">
-    <img class="img-responsive" src="{{ url_for('static', filename='images/header.jpeg') }}" alt="">
+    <img class="img-responsive" src="{{ url_for('static', filename='images/header1.jpg')}}" alt="">
 </section>
 <!-- 헤더 시작-->
 <nav id="navigation">
@@ -91,44 +95,28 @@
                     </div>
                     <div id="owl-example" class="owl-carousel">
                         <div class="item">
-                            <img class="item-img"
+                                <img class="item-img"
                                  src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165720_01.448.gif"
-                                 alt="">
+                                     alt="" onclick="window.open('/musicals/page?num=165720','엑스칼리버','width=1200,height=700,location=no,status=no,scrollbars=yes');">
                         </div>
                         <div class="item">
-                            <img class="item-img"
+                                <img class="item-img"
                                  src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165779_01.554.gif"
-                                 alt="">
+                                     alt="" onclick="window.open('/musicals/page?num=165779','빌리 엘리어트','width=1200,height=700,location=no,status=no,scrollbars=yes');">
                         </div>
                         <div class="item">
-                            <img class="item-img"
+                                <img class="item-img"
                                  src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_165875_01.410.gif"
-                                 alt="">
+                                     alt="" onclick="window.open('/musicals/page?num=165875','하데스타운','width=1200,height=700,location=no,status=no,scrollbars=yes');">
                         </div>
                         <div class="item">
-                            <img class="item-img"
+                                <img class="item-img"
                                  src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/06/0400012106_166404_01.832.gif"
-                                 alt="">
+                                     alt="" onclick="window.open('/musicals/page?num=166404','사랑했어요','width=1200,height=700,location=no,status=no,scrollbars=yes');">
                         </div>
-                        <div class="item">
-                            <img class="item-img"
-                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/05/0400012105_165033_01.041.gif"
-                                 alt="">
-                        </div>
-                        <div class="item">
-                            <img class="item-img"
-                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166835_01.149.gif"
-                                 alt="">
-                        </div>
-                        <div class="item">
-                            <img class="item-img"
-                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166852_01.252.gif"
-                                 alt="">
-                        </div>
-                        <div class="item">
-                            <img class="item-img"
-                                 src="http://ticketimage.interpark.com/PlayDictionary/DATA/PlayDic/PlayDicUpload/040001/21/07/0400012107_166583_01.800.gif"
-                                 alt="">
+                        <div class="item" >
+                            <div style="text-align: center; margin-top: 7rem; font-size: 20pt" onclick="window.open('/musicals/page?num=166832','드라큘라','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                개와<br>고양이의<br>시간</div>
                         </div>
 
                     </div>
@@ -151,82 +139,109 @@
                 </div>
                 <div class="container2">
                     <div class="chart">
-                        <div class="chart-row chart-period">
-                            <div class="chart-row-item">
+                        <div id="thead">
+<!--                            테이블 헤드와 바디 구분을 위해  추가-->
+                            <div class="chart-row chart-period">
+                                <div class="chart-row-item">
+                                </div>
+                                <span>7월</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span>8월</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span>9월</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span>10월</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
-                            <span>7월</span><span></span><span></span>
-                            <span></span><span>8월</span><span></span><span></span>
-                            <span></span><span>9월</span><span></span><span></span><span></span>
-                            <span>10월</span><span></span><span></span><span></span>
+                            <div class="chart-row chart-lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
-                        <div class="chart-row chart-lines">
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span><span></span><span></span>
-                            <span></span>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">드라큘라</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-one"
-                                    onclick="window.open('01_dracula.html','드라큘라','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    ~2021.08.01
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">레드북</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-two"
-                                    onclick="window.open('02_redbook.html','레드북','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    ~2021.08.22
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">비틀쥬스</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-three"
-                                    onclick="window.open('03_beetlejuice.html','비틀쥬스','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    2021.07.06~2021.08.08
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">마리 앙투아네트</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-four"
-                                    onclick="window.open('04_ma.html','마리 앙투아네트','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    2021.07.13~2021.10.03
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">광화문 연가</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-five"
-                                    onclick="window.open('05_ghm.html','광화문 연가','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    2021.07.16~2021.09.05
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">헤드윅</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-six"
-                                    onclick="window.open('06_hedwig.html','헤드윅','width=1200,height=700,location=no,status=no,scrollbars=yes');">
-                                    2021.07.30~2021.10.31
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="chart-row">
-                            <div class="chart-row-item">팬텀</div>
-                            <ul class="chart-row-bars">
-                                <li class="chart-li-seven"
-                                    onclick="window.open('07_phantom.html','팬텀','width=1200,height=700,location=no,status=no,scrollbars=yes');"></li>
-                            </ul>
+                        <div id="tbody">
+                            <div class="chart-row">
+                                <div class="chart-row-item">드라큘라</div>
+                                <ul class="chart-row-bars">3
+                                    <li class="chart-li-one"
+                                        onclick="window.open('/musicals/page?num=','드라큘라','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        ~2021.08.01
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">레드북</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-two"
+                                        onclick="window.open('02_redbook.html','레드북','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        ~2021.08.22
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">비틀쥬스</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-three"
+                                        onclick="window.open('03_beetlejuice.html','비틀쥬스','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        2021.07.06~2021.08.08
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">마리 앙투아네트</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-four"
+                                        onclick="window.open('04_ma.html','마리 앙투아네트','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        2021.07.13~2021.10.03
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">광화문 연가</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-five"
+                                        onclick="window.open('05_ghm.html','광화문 연가','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        2021.07.16~2021.09.05
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">헤드윅</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-six"
+                                        onclick="window.open('06_hedwig.html','헤드윅','width=1200,height=700,location=no,status=no,scrollbars=yes');">
+                                        2021.07.30~2021.10.31
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chart-row">
+                                <div class="chart-row-item">팬텀</div>
+                                <ul class="chart-row-bars">
+                                    <li class="chart-li-seven"
+                                        onclick="window.open('07_phantom.html','팬텀','width=1200,height=700,location=no,status=no,scrollbars=yes');"></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,5 +250,4 @@
     </div><!-- .containe close -->
 </section><!-- #공연차트 close -->
 </body>
-
 </html>

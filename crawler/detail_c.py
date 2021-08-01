@@ -5,7 +5,6 @@ from pprint import pprint
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 
-
 #
 def detail_crwl(num):
     url = 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno={}'.format(num)
@@ -74,19 +73,6 @@ def desc_crwl(num):
     return text
 
 
-# 포스터 크롤링
-def poster_crwl(num):
-    url = 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno='
-    data = requests.get(url + num, headers=headers)
-    page = BeautifulSoup(data.text, 'html.parser')
-    img_url = page.select_one('#wrap > div.pddetail > h2 > img')['src']
-
-    return img_url
-
-
-
 if __name__ == "__main__":
     test_numb = '165030'
-    # pprint(detail_crwl(test_numb))
-
-    poster_crwl(test_numb)
+    pprint(detail_crwl(test_numb))

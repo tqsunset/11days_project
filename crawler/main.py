@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from detail_c import detail_crwl, desc_crwl, poster_crwl
+from detail_c import detail_crwl, desc_crwl
 from parse_date import parse_date
 from pprint import pprint
 
@@ -41,7 +41,6 @@ def musical(url):
             for musical in extract:
                 play = musical.select_one('tr > td > b > font > a')
                 if play is not None:
-                    # print(play,'\n\n')
                     play_no = [play['onclick'][10:16]]
                     text_strip = musical.text.strip()
                     info_parse = text_strip.split(':')
@@ -57,7 +56,7 @@ def musical(url):
                         info = play_no + info_parse[0:2] + date + info_parse[3:]
 
                         num = info[0]
-                        info = info + detail_crwl(num) + [desc_crwl(num)] + [poster_crwl(num)]
+                        info = info + detail_crwl(num) + [desc_crwl(num)]
                         result.append(info)
         except IndexError:
             pass

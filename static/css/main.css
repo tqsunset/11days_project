@@ -236,6 +236,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   transition: all ease 0.2s 0s;
   margin-bottom: 4vw;
   border-bottom: 7px solid #FF4F02;
+  width: 200rem;
 
 }
 .item {
@@ -348,6 +349,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 }
 
 /*막대 바 관련*/
+
 #price .container2 .chart ul li {
     font-weight: 450;
     text-align: center;
