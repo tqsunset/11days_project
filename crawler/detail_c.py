@@ -73,6 +73,18 @@ def desc_crwl(num):
     return text
 
 
+# 포스터 크롤링
+def poster_crwl(num):
+    url = 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno='
+    data = requests.get(url + num, headers=headers)
+    page = BeautifulSoup(data.text, 'html.parser')
+    img_url = page.select_one('#wrap > div.pddetail > h2 > img')['src']
+
+    return img_url
+
+
+
 if __name__ == "__main__":
     test_numb = '165030'
-    pprint(detail_crwl(test_numb))
+    # pprint(detail_crwl(test_numb))
+    pprint(poster_crwl(test_numb))

@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 // 차트 데이터 연결
 function getDetails(id) {
-    console.log('getDetails() 실행됨')
+    // console.log('getDetails() 실행됨')
     $('.title').empty()
     $('.content').empty()
     $('#cast-list').empty()
@@ -15,7 +15,7 @@ function getDetails(id) {
         url: `/musicals/detail?num=${id}`,
         data: {},
         success: function (response) {
-            console.log(response['musical'])
+            // console.log(response['musical'])
             let musical = response['musical']
 
             let title = musical['title']
@@ -34,9 +34,10 @@ function getDetails(id) {
 
             let temp_content = `<p>${loc}</p>
                         <p>${startDateStr} ~ ${endDateStr}</p>
-                        <p>${genre}</p>
-                        <p>${staff}</p>`
+                        <p>${genre}</p>`
 
+            console.log(img_url)
+            document.title = title
             $('.title').append(title)
             $('.image').css("background-image", `url(${img_url})`)
             $('.content').append(temp_content)
@@ -63,7 +64,7 @@ function getDetails(id) {
                                         src="${photo_url}"><br>${castStr}<br/><span
                                         class="actor">${actorStr}</span></li>`
 
-                    console.log(temp_actor)
+                    // console.log(temp_actor)
                     $('#cast-list').append(temp_actor)
 
                 }

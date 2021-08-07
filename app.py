@@ -3,7 +3,10 @@ from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
 from pymongo import MongoClient
+
 client = MongoClient('localhost', 27017)
+# client = MongoClient('mongodb://test:test@localhost', 27017)
+
 db = client.dbsparta
 
 @app.route('/')
@@ -13,7 +16,7 @@ def home():
 @app.route('/musicals/page', methods=['GET'])
 def musical_detail():
     num_receive = request.args.get('num')
-    print(num_receive)
+    print('received musical id:', num_receive)
     return render_template('detail.html', num=num_receive)
 
 # API
@@ -22,13 +25,12 @@ def musical_detail():
 def show_musical_detail():
     num_receive = request.args.get('num')
     musical = db.musicals.find_one({'num': num_receive}, {'_id': False})
-    # print(musical)
     return jsonify({'musical': musical})
 
 @app.route('/musicals', methods=['GET'])
 def read_musicals():
     type_receive = request.args.get('type')
-    print(type_receive)
+    print('requested musical type: ', type_receive)
     now = datetime.datetime.now()
 
     if type_receive == 'coming':
@@ -41,7 +43,7 @@ def read_musicals():
         # musicals = 'else'
         musicals = list(db.musicals.find({}, {'_id': False}))
 
-    print('musicals', musicals)
+    print('musicals: ', musicals)
     return jsonify({'musicals': musicals})
 
 if __name__ == '__main__':
