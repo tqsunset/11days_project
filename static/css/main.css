@@ -1,0 +1,406 @@
+/* var text-decoration */
+@font-face {
+  font-family: myfont;
+  src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
+}
+/*-- Common Css --*/
+body {
+  font-family: myfont;
+  font-size: 14px;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+  font-family: myfont;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0px;
+  font-family: myfont;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a,
+a:active,
+a:focus,
+a:active {
+  text-decoration: none !important;
+  font-size: 15px;
+}
+/*-- custom heading Start --*/
+.heading {
+  text-align: center;
+  font-weight: 500;
+  color: #2E2E2E;
+  padding: 40px 0px;
+  position: relative;
+}
+.heading span {
+  font-size: 45px;
+  color: #ff530a;
+  font-weight: 600;
+}
+.heading:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 140px;
+  height: 1px;
+  background: #C8C1B3;
+  margin-left: -70px;
+}
+
+/*--  custom heading Start --*/
+.title {
+  color: #2E2E2E;
+  text-transform: uppercase;
+  padding: 30px 0px;
+}
+.title span {
+  color: #FF5333;
+}
+.before-border {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 140px;
+  height: 1px;
+  background: #C8C1B3;
+  margin-left: -70px;
+}
+/*-- transition custom style --*/
+.transition {
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+}
+
+/*============== Mixins style close ================*/
+
+/*-- 헤더 --*/
+#hero-area {
+  position: relative;
+}
+nav {
+  z-index: 99999;
+  width: 100%;
+}
+nav .block {
+  padding: 25px 40px;
+  margin-top: -7.5vw;
+  background: rgba(255, 255, 255, 1.0);
+  border-radius: 10px;
+}
+nav .block .navbar-default {
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 0;
+  background: none;
+}
+.navbar-brand {
+  font-family: 'Limelight', cursive;
+  font-size: 4vw;
+}
+.header-title {
+  color: #000;
+  transition: all ease 0.2s 0s;
+}
+.header-title:hover {
+  opacity: 0.6;
+  transition: all ease 0.2s 0s;
+}
+nav .block .navbar-default .navbar-brand {
+  padding-left: 0px;
+}
+nav .block .navbar-default .navbar-nav {
+  padding-top: 10px;
+}
+nav .block .navbar-default .navbar-nav > li > a {
+  color: #2E2E2E;
+  padding: 10px 0px;
+  margin: 0px 15px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+nav .block .navbar-default .navbar-nav > li > a:before {
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+  width: 0;
+}
+nav .block .navbar-default .navbar-nav > li > a:hover:before {
+  background-color: #e94c3d;
+  content: "";
+  width: 100%;
+}
+nav .block .navbar-default .navbar-nav > li.current > a {
+  color: #2E2E2E;
+  padding: 10px 0px;
+  margin: 0px 15px;
+}
+nav .block .navbar-default .navbar-nav > li.current > a:before {
+  background-color: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+  width: 100%;
+  background-color: #e94c3d;
+}
+nav .block .navbar-default .navbar-nav > .active > a,
+nav .block .navbar-default .navbar-nav > .active > a:focus,
+nav .block .navbar-default .navbar-nav > .active > a:hover {
+  background: none;
+}
+nav .block .navbar-default .navbar-nav > .active > a:before,
+nav .block .navbar-default .navbar-nav > .active > a:focus:before,
+nav .block .navbar-default .navbar-nav > .active > a:hover:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background: #FF5333;
+}
+
+/*-- 커밍순 --*/
+#slider {
+  padding: 50px 0px;
+}
+#slider .block {
+  padding: 0px 40px;
+}
+#slider .block .title {
+  padding: 0px ;
+}
+#slider .block .owl-carousel {
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+}
+#slider .block .owl-carousel .owl-pagination .active {
+  background: #FF5333;
+}
+#slider .block .owl-carousel .owl-pagination div {
+  background: #DADADA;
+  border-radius: 100%;
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+#slider .block .owl-carousel .owl-buttons {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  font-size: 40px;
+  color: #AA9D84;
+}
+
+.img-responsive {
+  transition: all ease 0.2s 0s;
+  margin-bottom: 4vw;
+  border-bottom: 7px solid #FF4F02;
+  width: 200rem;
+
+}
+.item {
+  transition: all ease 0.2s 0s;
+}
+.item:hover {
+  opacity: 1;
+  filter: grayscale(100%);
+  transition: all ease 0.2s 0s;
+}
+
+/*-- about-us Start --*/
+#about-us {
+  padding: 100px 0px;
+  background: #F6F6F6;
+}
+#about-us .block {
+  text-align: center;
+}
+#about-us .block p {
+  color: #959595;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 40px 0px;
+}
+
+/*-- chart Start --*/
+/*전체 차트란*/
+.container2 {
+    max-width: 1200px;
+    min-width: 650px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/*차트*/
+.chart {
+    display: grid;
+    border: 2px solid rgba(57, 57, 57, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+/*홀수번째 작품 막대바 배경*/
+.chart-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    background-color: #ffffff;
+}
+
+/*짝수번째 작품 막대바 배경*/
+.chart-row:nth-child(odd) {
+    background-color: rgba(243, 243, 243, 0.5);
+}
+
+/*날짜 구분란(가로 맨 위)*/
+.chart-period {
+    color: #dedede;
+    background-color: rgb(75, 75, 75) !important;
+    border-bottom: 2px solid #393939;
+    grid-template-columns: 180px repeat(16, 1fr);
+
+}
+
+/*날짜 구분란(가로 맨 위) 글씨 디자인*/
+.chart-period > span {
+    text-align: center;
+    font-size: 13px;
+    align-self: center;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+/*작품 제목란(세로 맨 앞)*/
+.chart-row-item {
+    background-color: rgb(75, 75, 75);
+    border: 1px solid #393939;
+    border-top: 0;
+    border-left: 0;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #dedede;
+}
+
+/*막대바 표시 부분 배경 관련 (줄 개수 등)*/
+.chart-lines {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    grid-template-columns: 180px repeat(16, 1fr);
+}
+
+/*막대바 표시부분 세로 구분선*/
+.chart-lines > span {
+    display: block;
+    border-right: 1px solid rgb(75, 75, 75, 0.3);
+}
+
+/*막대바 표시 구역 & 가로 구분선*/
+.chart-row-bars {
+    list-style: none;
+    display: grid;
+    padding: 15px 0;
+    margin: 0;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 10px 0;
+    border-bottom: 1px solid rgb(75, 75, 75, 0.3);
+}
+
+/*막대 바 관련*/
+
+#price .container2 .chart ul li {
+    font-weight: 450;
+    text-align: center;
+    font-size: 13px;
+    min-height: 15px;
+    padding: 5px 15px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/*첫번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-one {
+    grid-column: 1/4;
+    background-color: #9a972b;
+}
+
+/*두번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-two {
+    grid-column: 1/8;
+    background-color: #0080FF;
+}
+
+/*세번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-three {
+    grid-column: 1/6;
+    background-color: #168046;
+}
+
+/*네번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-four {
+    grid-column: 3/14;
+    background-color: #512180;
+}
+
+/*다섯번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-five {
+    grid-column: 3/10;
+    background-color: #4F97A3;
+}
+
+/*여섯번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-six {
+    grid-column: 4/17;
+    background-color: #af3232;
+}
+
+/*일곱번째 작품 그래프 칸, grid-column으로 색칠할 부분 조절*/
+ul .chart-li-seven {
+    grid-column: 4/4;
+    background-color: #b14a9b;
+}
